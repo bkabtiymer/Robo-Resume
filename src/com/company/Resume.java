@@ -4,34 +4,29 @@ import com.company.Education;
 import com.company.Experience;
 import com.company.Skills;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class Resume {
     private String name;
     private String email;
-    private ArrayList<Education> educationList = new ArrayList<>();
-    private ArrayList<Experience> experience= new ArrayList<>();
-    private ArrayList<Skills> skills = new ArrayList<>();
+    private String phoneNumber;
+    ArrayList<String> educationList= new ArrayList<String>();
+    ArrayList<String> experience= new ArrayList<String>();
+    ArrayList<String> skillSet= new ArrayList<String>();
+
 
     public Resume() {
         this.name = name;
         this.email = email;}
 
-   public void showResume() {
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-       System.out.println("EDUCATION: ");
-       for (Education edu : educationList) {
-           edu.listEducation();
-       }
-       System.out.println("EXPERIENCE: ");
-       for (Experience exper : experience) {
-           exper.listExperience();
-       }
-       System.out.println("SKILLS: ");
-       for (Skills skill : skills) {
-           skill.listSkills();
-       }
-   }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public String getName() {
         return name;
@@ -49,23 +44,27 @@ public class Resume {
         this.email = email;
     }
 
-    public void addEducation(Education educate){
-            educationList.add(educate);
-      }
-       public Education getEducation(int i) {
-           return educationList.get(i);
-       }
-    public void addExperience(Experience experie){
-        experience.add(experie);
-    }
-        public Experience getExperience(int i) {
-        return experience.get(i);
-    }
-    public void addSkills(Skills skills2) {
-        skills.add(skills2);
-    }
-    public Skills getSkills(int i) {
-        return skills.get(i);
+    public String getEducationList(int i) {
+        return educationList.get(i);
     }
 
+    public void setEducationList(String edu) {
+        this.educationList.add(edu);
+    }
+
+    public String getExperience(int k) {
+        return experience.get(k);
+    }
+
+    public void setExperience(String exp) {
+        this.experience.add(exp);
+    }
+
+    public String getSkillSet(int i) {
+        return skillSet.get(i);
+    }
+
+    public void setSkillSet(String skill) {
+        this.skillSet.add(skill);
+    }
 }
